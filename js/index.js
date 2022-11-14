@@ -1,6 +1,6 @@
-function getComputerChoice() {
-    let options = ['rock', 'paper', 'scissors'];
-    return options[Math.floor(Math.random() * options.length)]
+function getComputerPick() {
+    let picksArray = ["✊","🖐️","✌️"];
+    return picksArray[Math.floor(Math.random() * picksArray.length)]
 }
 function playerSelection(option) {
     return option.toLowerCase()
