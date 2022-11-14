@@ -1,9 +1,18 @@
+function getRock() {
+    return document.querySelectorAll("div")[1]
+}
+function getPaper() {
+    return document.querySelectorAll("div")[2]
+}
+function getScissors() {
+    return document.querySelectorAll("div")[3]
+}
 function getComputerPick() {
     let picksArray = ["✊","🖐️","✌️"];
     return picksArray[Math.floor(Math.random() * picksArray.length)]
 }
-function playerSelection(option) {
-    return option.toLowerCase()
+function getUserPick(pick) {
+    return pick
 }
 //you're working on this
 function playRound(playerSelection, getComputerChoice) {
