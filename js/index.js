@@ -1,4 +1,8 @@
-function allPicks() {
+function getBody () {
+    return document.body
+}
+//game functions start//
+function allPicks () {
     return [
         {pick: "rock",
         emoji: "✊",
@@ -16,13 +20,13 @@ function allPicks() {
     }
     ]
 }
-function queryUserPick() {
+function queryUserPick () {
     return document.querySelectorAll("[data-pick]")
 }
-function getComputerPick() {
+function getComputerPick () {
     return allPicks()[Math.floor(Math.random() * allPicks().length)]
 }
-function returnResult(userPick, comPick) {
+function returnResult (userPick, comPick) {
     let result = undefined;
     //outcomes where user loses
     if (userPick.pick === comPick.beats) result = -1;
@@ -33,6 +37,15 @@ function returnResult(userPick, comPick) {
     console.log(result);
     return result;
 }
+//game functions end//
+//other functions start//
+function showUserPick (userPick) {
+    return document.querySelectorAll("div")[4].innerHTML = userPick.emoji
+}
+function showComPick(comPick) {
+    return document.querySelectorAll("div")[6].innerHTML = comPick.emoji
+}
+//other functions end//
 //Event listeners
 queryUserPick().forEach((pick) => {
     pick.addEventListener("click", () => {
@@ -40,6 +53,8 @@ queryUserPick().forEach((pick) => {
         const comPick = getComputerPick();
         const userPick = allPicks().find(i => i.pick === pickName);
         console.log(userPick, comPick);
-        returnResult(userPick, comPick)
+        showUserPick(userPick);
+        showComPick(comPick);
+        returnResult(userPick, comPick);
     })
 })
