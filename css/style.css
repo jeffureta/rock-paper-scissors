@@ -13,14 +13,8 @@
     height: 151.18px;
     border: 1px solid black;
     border-radius: 2px;
-    /*for debugging*/
-    /* outline: 1px solid red; */
     margin: 2% auto;
 }
-/* .section {
-    for debugging
-    outline: 1px solid red;
-} */
 .sec-one,
 .sec-three,
 .sec-four {
@@ -44,8 +38,6 @@
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
-    /*for debugging*/
-    /* outline: 1px solid red; */
 }
 .sub-section.sec-two:nth-child(2), 
 .sub-section.sec-two:nth-child(3),
@@ -55,12 +47,10 @@
     align-items: center;
     font-size: 1rem;
     margin: auto;
-    /*for debugging*/
-    /* outline: 1px solid red; */
 }
 .sub-section.sec-two:nth-child(2),
 .sub-section.sec-two:nth-child(4),
-.section.sec-four>div /*This will get the border style for section 4 divs*/{
+.section.sec-four>div /*This will get the border style for section 4 div*/{
     border: 1px solid black;
     border-radius: 5px;
     width: 30px;
