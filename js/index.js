@@ -1,8 +1,5 @@
-function getBody () {
+const getBody = function () {
     return document.body
-}
-function queryUL () {
-    return document.querySelectorAll("ul");
 }
 //game functions start//
 function allPicks () {
@@ -40,7 +37,15 @@ function returnResult (userPick, comPick) {
     return [result, userPick, comPick];
 }
 //game functions end//
+
 //other functions start//
+function isTrue (element) { 
+    //This function is used to know if section three has 3 results
+    //If it has 3 results already it will remove the oldest result
+    //And will add the new result on top of the stack
+    if (typeof element != "undefined" && element != null) return 1;
+    else return 0;
+}
 function showUserPick (userPick) {
     return document.querySelectorAll("div")[4].innerHTML = userPick.emoji
 }
@@ -51,30 +56,54 @@ function showPreviousResults (outcome, userPick, comPick) {
     const ul = document.querySelectorAll("ul")[0];
     const li = document.createElement("li");
     const div = document.createElement("div");
-    if (document.querySelectorAll("ul")[0].childElementCount < 3) {
+    const thirdLI = document.querySelectorAll("li")[2];
+    if (isTrue(thirdLI) === 0) {
         if (outcome === 1) {
             div. innerText = `(W) ${userPick} beats ${comPick}`;
             div.classList.add("win");
             li.append(div);
-            queryUL()[0].append(li);
+            ul.append(li);
         }
         if (outcome === -1) {
             div.innerText = `(L) ${comPick} beats ${userPick}`;
             div.classList.add("lose");
             li.append(div);
-            queryUL()[0].append(li)
+            ul.append(li)
+        }
+        if (outcome === 0) {
+            div.innerText = `(D) both picked ${userPick}`;
+            div.classList.add("draw");
+            li.append(div);
+            ul.append(li);
         }
     }
-    //You're working on this
-    // if (document.querySelectorAll("ul")[0].childElementCount > 3) {
-
-    // }
+    if (isTrue(thirdLI) === 1) {
+        document.querySelectorAll("li")[0].remove();
+        if (outcome === 1) {
+            div. innerText = `(W) ${userPick} beats ${comPick}`;
+            div.classList.add("win");
+            li.append(div);
+            ul.append(li);
+        }
+        if (outcome === -1) {
+            div. innerText = `(L) ${comPick} beats ${userPick}`;
+            div.classList.add("lose");
+            li.append(div);
+            ul.append(li);
+        }
+        if (outcome === 0) {
+            div. innerText = `(D) both picked ${userPick}`;
+            div.classList.add("draw");
+            li.append(div);
+            ul.append(li);
+        }
+    }
 }
 //other functions end//
 //Event listeners
 queryUserPick().forEach((pick) => {
     pick.addEventListener("click", () => {
-        let count = getCount() + 1;
+        //let count = getCount() + 1;
         const pickName = pick.dataset.pick;
         const comPick = getComputerPick();
         const userPick = allPicks().find(i => i.pick === pickName)
@@ -82,6 +111,6 @@ queryUserPick().forEach((pick) => {
         showComPick(comPick);
         const NewResult = returnResult(userPick, comPick);
         showPreviousResults(NewResult[0], userPick.pick, comPick.pick);
-        console.log([NewResult, count]);
+        //console.log([NewResult, count]);
     })
 })
