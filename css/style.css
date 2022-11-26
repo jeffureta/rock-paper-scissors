@@ -65,7 +65,7 @@
 .section.sec-three>ul>li {
     font-size: 0.4rem;
     border-top: 0.1px solid black;
-    text-align: left;
+    text-align: center;
 }
 .section.sec-three>ul>li:nth-child(1) {
     border-bottom: 0.1px solid black;
