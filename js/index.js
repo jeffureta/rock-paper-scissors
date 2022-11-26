@@ -1,6 +1,9 @@
 const getBody = function () {
     return document.body
 }
+let getStreak = function () {
+    return document.querySelectorAll("span")[0];
+}
 //game functions start//
 function allPicks () {
     return [
@@ -40,6 +43,10 @@ function returnResult (userPick, comPick) {
 
 //other functions start//
 let roundCount = 0;
+let streakCount = 0;
+function updateStreak() {
+    return returnResult(userPick, comPick)
+}
 function getFirstLetter(pick) {
     return pick.charAt(0).toUpperCase(); 
 }
@@ -120,8 +127,27 @@ queryUserPick().forEach((pick) => {
         const userPick = allPicks().find(i => i.pick === pickName)
         showUserPick(userPick);
         showComPick(comPick);
-        const NewResult = returnResult(userPick, comPick);
-        showPreviousResults(NewResult[0], userPick.pick, comPick.pick);
+        const newResult = returnResult(userPick, comPick);
+        console.log(`${newResult} this is new result`);
+        if (streakCount <= 0 && newResult[0] === 1) {
+            streakCount = 0;
+            getStreak().innerText = streakCount;
+        }
+        if (streakCount > 0 && newResult[0] === -1) {
+            streakCount = 0;            
+            getStreak().innerText = streakCount;
+        }
+        if (newResult[0] === 1) {
+            streakCount++;
+            getStreak().innerText = streakCount;
+        } else if (newResult[0] === -1) {
+            streakCount += -1;
+            getStreak().innerText = streakCount;
+        } else if (newResult[0] === 0) {
+            streakCount += 0;
+            getStreak().innerText = streakCount;
+        }
+        showPreviousResults(newResult[0], userPick.pick, comPick.pick);
         returnRound(roundCount);
     })
 })
