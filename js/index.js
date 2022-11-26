@@ -39,6 +39,17 @@ function returnResult (userPick, comPick) {
 //game functions end//
 
 //other functions start//
+let roundCount = 0;
+function getFirstLetter(pick) {
+    return pick.charAt(0).toUpperCase(); 
+}
+function addOne(roundCount) {
+    return roundCount +1
+}
+function returnRound() {
+    console.log(roundCount)
+    return roundCount
+}
 function isTrue (element) { 
     //This function is used to know if section three has 3 results
     //If it has 3 results already it will remove the oldest result
@@ -59,19 +70,19 @@ function showPreviousResults (outcome, userPick, comPick) {
     const thirdLI = document.querySelectorAll("li")[2];
     if (isTrue(thirdLI) === 0) {
         if (outcome === 1) {
-            div. innerText = `(W) ${userPick} beats ${comPick}`;
+            div. innerText = `${returnRound()}. (W) ${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div.innerText = `(L) ${comPick} beats ${userPick}`;
+            div.innerText = `${returnRound()}. (L) ${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li)
         }
         if (outcome === 0) {
-            div.innerText = `(D) both picked ${userPick}`;
+            div.innerText = `${returnRound()}. (D) both picked ${getFirstLetter(userPick)}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
@@ -80,19 +91,19 @@ function showPreviousResults (outcome, userPick, comPick) {
     if (isTrue(thirdLI) === 1) {
         document.querySelectorAll("li")[0].remove();
         if (outcome === 1) {
-            div. innerText = `(W) ${userPick} beats ${comPick}`;
+            div. innerText = `${returnRound()}. (W) ${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div. innerText = `(L) ${comPick} beats ${userPick}`;
+            div. innerText = `${returnRound()}. (L) ${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li);
         }
         if (outcome === 0) {
-            div. innerText = `(D) both picked ${userPick}`;
+            div. innerText = `${returnRound()}. (D) both picked ${getFirstLetter(userPick)}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
@@ -103,7 +114,7 @@ function showPreviousResults (outcome, userPick, comPick) {
 //Event listeners
 queryUserPick().forEach((pick) => {
     pick.addEventListener("click", () => {
-        //let count = getCount() + 1;
+        roundCount += 1;
         const pickName = pick.dataset.pick;
         const comPick = getComputerPick();
         const userPick = allPicks().find(i => i.pick === pickName)
@@ -111,6 +122,6 @@ queryUserPick().forEach((pick) => {
         showComPick(comPick);
         const NewResult = returnResult(userPick, comPick);
         showPreviousResults(NewResult[0], userPick.pick, comPick.pick);
-        //console.log([NewResult, count]);
+        returnRound(roundCount);
     })
 })

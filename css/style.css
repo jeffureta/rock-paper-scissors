@@ -67,6 +67,9 @@
     border-top: 0.1px solid black;
     text-align: left;
 }
+.section.sec-three>ul>li:nth-child(1) {
+    border-bottom: 0.1px solid black;
+}
 /*.section.sec-three>ul>li:nth-child(1)*/
 .win {
     background-color: lightgreen;
