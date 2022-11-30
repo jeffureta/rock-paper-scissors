@@ -36,8 +36,6 @@ function returnResult (userPick, comPick) {
 //game functions end//
 
 //other functions start//
-let roundCount = 0;
-let streakCount = 0;
 function updateStreak() {
     return returnResult(userPick, comPick)
 }
