@@ -16,8 +16,8 @@
     margin: 2% auto;
 }
 .section-one,
-.sec-three,
-.sec-four {
+.section-three,
+.section-four {
     grid-row: span 1;
 }
 .section-two {
@@ -31,6 +31,9 @@
     text-align: center;
 }
 /*section 2*/
+.section-two {
+    padding-bottom: 1.5%;
+}
 .section-two>div:nth-child(1) { /*streak*/
     grid-column: span 3;
     height: 12px;
@@ -65,7 +68,7 @@
 }
 .section-two>div:nth-child(4), /*This will get the border style for section 4 div*/
 .section-two>div:nth-child(6),
-.section.sec-four>div {
+.section-four>div {
     border: 1px solid black;
     border-radius: 5px;
     width: 30px;
@@ -73,46 +76,42 @@
     background-color: #D3D3D3;
 }
 /*section 3*/
-.section.sec-three>ul {
+.section-three>ul {
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 2%;
 }
-.section.sec-three>ul>li {
+.section-three>ul>li {
+    height: 9px;
+}
+.section-three>ul>li>div {
+    padding-top: 1%;
+    height: 100%;
     font-size: 0.4rem;
-    border-top: 0.1px solid black;
-    text-align: center;
+    text-align: left;
 }
-.section.sec-three>ul>li:nth-child(1) {
-    border-bottom: 0.1px solid black;
-}
-/*.section.sec-three>ul>li:nth-child(1)*/
 .win {
     background-color: lightgreen;
 }
-/*.section.sec-three>ul>li:nth-child(2)*/
 .lose {
     background-color: lightcoral;
 }
-/*.section.sec-three>ul>li:nth-child(3)*/
 .draw {
     background-color: yellow;
 }
 /*section 4*/
-.section.sec-four {
+.section-four {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 35px;
-    /* border-top: 1px solid black; */
 }
-.section.sec-four>div {
+.section-four>div {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: 300ms;
 }
-.section.sec-four>div:hover {
+.section-four>div:hover {
     transform: scale(1.05);
 }
