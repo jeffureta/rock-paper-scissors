@@ -31,11 +31,7 @@
     text-align: center;
 }
 /*section 2*/
-/* .section.section-two {
-    display: grid;
-    grid-template-rows: 3;
-} */
-.sub-section.section-two:nth-child(1) {
+.section-two>div:nth-child(1) { /*streak*/
     grid-column: span 3;
     height: 12px;
     display: flex;
@@ -43,35 +39,33 @@
     align-items: center;
     font-size: 0.5rem;
 }
-.sub-section.section-two:nth-child(2) {
+.section-two>div:nth-child(2) { /*you text*/
     grid-column: 1 / 2;
-}
-.sub-section.section-two:nth-child(3) {
-    grid-column: 3 / 4;
-}
-.sub-section.section-two:nth-child(4) {
-    grid-column: 1 / 2;
-}
-.sub-section.section-two:nth-child(2),
-.sub-section.section-two:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
 }
-.sub-section.section-two:nth-child(4), 
-.sub-section.section-two:nth-child(5),
-.sub-section.section-two:nth-child(6) {
-    /* grid-column: span 1; */
+.section-two>div:nth-child(3) { /*com text*/
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+}
+
+.section-two>div:nth-child(4), /*you emoji*/
+.section-two>div:nth-child(5), /*vs emoji*/
+.section-two>div:nth-child(6) { /*com emoji*/
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
     margin: auto;
 }
-.sub-section.section-two:nth-child(4),
-.sub-section.section-two:nth-child(6),
-.section.sec-four>div /*This will get the border style for section 4 div*/{
+.section-two>div:nth-child(4), /*This will get the border style for section 4 div*/
+.section-two>div:nth-child(6),
+.section.sec-four>div {
     border: 1px solid black;
     border-radius: 5px;
     width: 30px;
