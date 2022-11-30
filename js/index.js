@@ -129,21 +129,21 @@ queryUserPick().forEach((pick) => {
         console.log(`${newResult} this is new result`);
         if (streakCount <= 0 && newResult[0] === 1) {
             streakCount = 0;
-            streak.innerText = streakCount;
+            streakElement.innerText = streakCount;
         }
         if (streakCount > 0 && newResult[0] === -1) {
             streakCount = 0;            
-            streak.innerText = streakCount;
+            streakElement.innerText = streakCount;
         }
         if (newResult[0] === 1) {
             streakCount++;
-            streak.innerText = streakCount;
+            streakElement.innerText = streakCount;
         } else if (newResult[0] === -1) {
             streakCount += -1;
-            streak.innerText = streakCount;
+            streakElement.innerText = streakCount;
         } else if (newResult[0] === 0) {
             streakCount += 0;
-            streak.innerText = streakCount;
+            streakElement.innerText = streakCount;
         }
         showPreviousResults(newResult[0], userPick.pick, comPick.pick);
         returnRound(roundCount);

@@ -1,1 +1,1 @@
-let streak = document.querySelector("span");
+let streakElement = document.querySelector("span");
