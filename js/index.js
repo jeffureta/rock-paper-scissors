@@ -65,10 +65,10 @@ function isTrue (element) {
     else return 0;
 }
 function showUserPick (userPick) {
-    return document.querySelectorAll("div")[4].innerHTML = userPick.emoji
+    return document.querySelectorAll("div")[6].innerHTML = userPick.emoji
 }
 function showComPick (comPick) {
-    return document.querySelectorAll("div")[6].innerHTML = comPick.emoji
+    return document.querySelectorAll("div")[8].innerHTML = comPick.emoji
 }
 function showPreviousResults (outcome, userPick, comPick) {
     const ul = document.querySelectorAll("ul")[0];
