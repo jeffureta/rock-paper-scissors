@@ -20,7 +20,7 @@
 .sec-four {
     grid-row: span 1;
 }
-.sec-two {
+.section-two {
     grid-row: span 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -31,11 +31,11 @@
     text-align: center;
 }
 /*section 2*/
-/* .section.sec-two {
+/* .section.section-two {
     display: grid;
     grid-template-rows: 3;
 } */
-.sub-section.sec-two:nth-child(1) {
+.sub-section.section-two:nth-child(1) {
     grid-column: span 3;
     height: 12px;
     display: flex;
@@ -43,25 +43,25 @@
     align-items: center;
     font-size: 0.5rem;
 }
-.sub-section.sec-two:nth-child(2) {
+.sub-section.section-two:nth-child(2) {
     grid-column: 1 / 2;
 }
-.sub-section.sec-two:nth-child(3) {
+.sub-section.section-two:nth-child(3) {
     grid-column: 3 / 4;
 }
-.sub-section.sec-two:nth-child(4) {
+.sub-section.section-two:nth-child(4) {
     grid-column: 1 / 2;
 }
-.sub-section.sec-two:nth-child(2),
-.sub-section.sec-two:nth-child(3) {
+.sub-section.section-two:nth-child(2),
+.sub-section.section-two:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
 }
-.sub-section.sec-two:nth-child(4), 
-.sub-section.sec-two:nth-child(5),
-.sub-section.sec-two:nth-child(6) {
+.sub-section.section-two:nth-child(4), 
+.sub-section.section-two:nth-child(5),
+.sub-section.section-two:nth-child(6) {
     /* grid-column: span 1; */
     display: flex;
     justify-content: center;
@@ -69,8 +69,8 @@
     font-size: 1rem;
     margin: auto;
 }
-.sub-section.sec-two:nth-child(4),
-.sub-section.sec-two:nth-child(6),
+.sub-section.section-two:nth-child(4),
+.sub-section.section-two:nth-child(6),
 .section.sec-four>div /*This will get the border style for section 4 div*/{
     border: 1px solid black;
     border-radius: 5px;
