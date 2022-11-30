@@ -1,9 +1,3 @@
-const getBody = function () {
-    return document.body
-}
-let getStreak = function () {
-    return document.querySelectorAll("span")[0];
-}
 //game functions start//
 function allPicks () {
     return [
@@ -71,25 +65,28 @@ function showComPick (comPick) {
     return document.querySelectorAll("div")[8].innerHTML = comPick.emoji
 }
 function showPreviousResults (outcome, userPick, comPick) {
+    const sectionTwo = document.getElementsByClassName("section-two")[0];
     const ul = document.querySelectorAll("ul")[0];
     const li = document.createElement("li");
     const div = document.createElement("div");
     const thirdLI = document.querySelectorAll("li")[2];
     if (isTrue(thirdLI) === 0) {
+        sectionTwo.style.borderBottom = "0.1px solid black";
+        li.style.borderBottom = "0.5px solid black";
         if (outcome === 1) {
-            div. innerText = `${returnRound()}. (W) ${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.(W)${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div.innerText = `${returnRound()}. (L) ${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
+            div.innerHTML = `&nbsp;${returnRound()}.(L)${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li)
         }
         if (outcome === 0) {
-            div.innerText = `${returnRound()}. (D) both picked ${getFirstLetter(userPick)}`;
+            div.innerHTML = `&nbsp;${returnRound()}.(D)both picked ${getFirstLetter(userPick)}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
@@ -97,26 +94,27 @@ function showPreviousResults (outcome, userPick, comPick) {
     }
     if (isTrue(thirdLI) === 1) {
         document.querySelectorAll("li")[0].remove();
+        li.style.borderBottom = "0.5px solid black";
         if (outcome === 1) {
-            div. innerText = `${returnRound()}. (W) ${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.(W)${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div. innerText = `${returnRound()}. (L) ${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.(L)${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li);
         }
         if (outcome === 0) {
-            div. innerText = `${returnRound()}. (D) both picked ${getFirstLetter(userPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.(D)both picked ${getFirstLetter(userPick)}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
         }
     }
-}
+}    
 //other functions end//
 //Event listeners
 queryUserPick().forEach((pick) => {
