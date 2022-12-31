@@ -1,20 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* mobile first */
+
+@media (min-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .container__div {
+        width: 375px;
+        height: 667px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 1% 0;
+    }
+}
+
 * {
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: 'Press Start 2P', cursive;
     list-style: none;
 }
-.main-container {
+
+/* custom properties */
+
+:root {
+    /* colors */
+    --box-color-win: #90EE90;
+    --box-color-lose: #FF6347;
+    --box-color-draw: #F7CE4C;
+    /* typography */
+    --big-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.5rem;
+    --emoji-font-size: 1.5rem;
+    /* containers */
+    --box-size: 2rem;
+}
+.container__div {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    width: 166.29px;
-    height: 151.18px;
-    border: 1px solid black;
-    border-radius: 2px;
-    margin: 2% auto;
+    height: 667px;
 }
+
 .section-one,
 .section-three,
 .section-four {
@@ -25,23 +58,39 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
 /*from top down*/
 /*section 1*/
-.section-one>p {
+.section-one {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    /* font-size: var(--big-font-size); */
+    /* margin: 1rem 0; */
+}
+
+.section-one span {
+    font-size: var(--small-font-size);
     text-align: center;
 }
 /*section 2*/
-.section-two {
-    padding-bottom: 1.5%;
-}
+.section-two {padding-bottom: 1.5%;}
+
 .section-two>div:nth-child(1) { /*streak*/
     grid-column: span 3;
-    height: 12px;
+    /* height: 12px; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
 }
+
 .section-two>div:nth-child(2) { /*you text*/
     grid-column: 1 / 2;
     display: flex;
@@ -50,6 +99,7 @@
     font-size: 0.5rem;
     margin-bottom: 2%;
 }
+
 .section-two>div:nth-child(3) { /*com text*/
     grid-column: 3 / 4;
     display: flex;
@@ -65,47 +115,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: var(--emoji-font-size);
     margin: auto;
 }
+
 .section-two>div:nth-child(4), /*This will get the border style for section 4 div*/
 .section-two>div:nth-child(6),
 .section-four>div {
     border: 1px solid black;
     border-radius: 5px;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     background-color: #D3D3D3;
 }
+
 /*section 3*/
 .section-three>ul {
     display: flex;
     flex-direction: column-reverse;
 }
+
 .section-three>ul>li {
-    height: 9px;
+    height: var(--box-size);
 }
+
 .section-three>ul>li>div {
-    padding-top: 1%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
     height: 100%;
-    font-size: 0.4rem;
+    font-size: var(--smaller-font-size);
     text-align: left;
 }
-.win {
-    background-color: lightgreen;
-}
-.lose {
-    background-color: lightcoral;
-}
-.draw {
-    background-color: yellow;
-}
+
+.win {background-color: var(--box-color-win);}
+
+.lose {background-color: var(--box-color-lose);}
+
+.draw {background-color: var(--box-color-draw);}
+
 /*section 4*/
 .section-four {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 35px;
+    font-size: var(--emoji-font-size);
 }
 .section-four>div {
     display: flex;
@@ -115,5 +170,5 @@
     transition: 300ms;
 }
 .section-four>div:hover {
-    transform: scale(1.05);
+    transform: scale(1.5);
 }

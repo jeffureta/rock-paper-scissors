@@ -69,22 +69,22 @@ function showPreviousResults (outcome, userPick, comPick) {
     const div = document.createElement("div");
     const thirdLI = document.querySelectorAll("li")[2];
     if (isTrue(thirdLI) === 0) {
-        sectionTwo.style.borderBottom = "0.1px solid black";
-        li.style.borderBottom = "0.5px solid black";
+        sectionTwo.style.borderBottom = "1px solid black";
+        li.style.borderBottom = "1px solid black";
         if (outcome === 1) {
-            div. innerHTML = `&nbsp;${returnRound()}.(W)${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.WIN ${userPick} beats ${comPick}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div.innerHTML = `&nbsp;${returnRound()}.(L)${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
+            div.innerHTML = `&nbsp;${returnRound()}.LOSE ${comPick} beats ${userPick}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li)
         }
         if (outcome === 0) {
-            div.innerHTML = `&nbsp;${returnRound()}.(D)both picked ${getFirstLetter(userPick)}`;
+            div.innerHTML = `&nbsp;${returnRound()}.DRAW both picked ${userPick}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
@@ -92,21 +92,21 @@ function showPreviousResults (outcome, userPick, comPick) {
     }
     if (isTrue(thirdLI) === 1) {
         document.querySelectorAll("li")[0].remove();
-        li.style.borderBottom = "0.5px solid black";
+        li.style.borderBottom = "1px solid black";
         if (outcome === 1) {
-            div. innerHTML = `&nbsp;${returnRound()}.(W)${getFirstLetter(userPick)} beats ${getFirstLetter(comPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.WIN ${userPick} beats ${comPick}`;
             div.classList.add("win");
             li.append(div);
             ul.append(li);
         }
         if (outcome === -1) {
-            div. innerHTML = `&nbsp;${returnRound()}.(L)${getFirstLetter(comPick)} beats ${getFirstLetter(userPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.LOSE ${comPick} beats ${userPick}`;
             div.classList.add("lose");
             li.append(div);
             ul.append(li);
         }
         if (outcome === 0) {
-            div. innerHTML = `&nbsp;${returnRound()}.(D)both picked ${getFirstLetter(userPick)}`;
+            div. innerHTML = `&nbsp;${returnRound()}.DRAW both picked ${userPick}`;
             div.classList.add("draw");
             li.append(div);
             ul.append(li);
