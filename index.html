@@ -12,20 +12,29 @@
 <body>
     <div class="container__div">
         <div class="section-one">
-            <h1 class="title">rock paper scissors<br><span>by DataWrangler90</span></h1>
-            <p></p>
+            <h1 class="title">rock paper scissors<br><span title="Jeff Ureta">by DataWrangler90</span></h1>
         </div>
 
         <div class="section-two">
             <!--nt-child() used to target css-->
             <div> <!--1st child-->
-                <h2>streak&nbsp;<span>0</span></h2>
-            </div> 
-            <div><h2>you</h2></div> <!--2nd child-->
-            <div><h2>com</h2></div> <!--3rd child-->
-            <div><h2>🙅</h2></div> <!--4th child-->
-            <div><h2>🆚</h2></div> <!--5th child-->
-            <div><h2>🤖</h2></div> <!--6th child-->
+                <h2>streak&nbsp;<span id="streak">0</span></h2>
+            </div>
+            <div>
+                <h2>you</h2>
+            </div> <!--2nd child-->
+            <div>
+                <h2>com</h2>
+            </div> <!--3rd child-->
+            <div>
+                <h2>🙅</h2>
+            </div> <!--4th child-->
+            <div>
+                <h2>🆚</h2>
+            </div> <!--5th child-->
+            <div>
+                <h2>🤖</h2>
+            </div> <!--6th child-->
         </div>
 
         <div class="section-three"> <!--This is where last three results show-up-->
@@ -33,9 +42,15 @@
             </ul>
         </div>
         <div class="section-four">
-            <div data-pick="rock"><h2>✊</h2></div>
-            <div data-pick="paper"><h2>🖐</h2></div>
-            <div data-pick="scissors"><h2>✌️</h2></div>
+            <div data-pick="rock">
+                <h2>✊</h2>
+            </div>
+            <div data-pick="paper">
+                <h2>🖐</h2>
+            </div>
+            <div data-pick="scissors">
+                <h2>✌️</h2>
+            </div>
         </div>
     </div>
     <script src="js/variables.js"></script>

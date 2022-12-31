@@ -39,16 +39,20 @@ function returnResult (userPick, comPick) {
 function updateStreak() {
     return returnResult(userPick, comPick)
 }
+
 function getFirstLetter(pick) {
-    return pick.charAt(0).toUpperCase(); 
+    return pick.charAt(0).toUpperCase();
 }
+
 function addOne(roundCount) {
     return roundCount +1
 }
+
 function returnRound() {
     console.log(roundCount)
     return roundCount
 }
+
 function isTrue (element) { 
     //This function is used to know if section three has 3 results
     //If it has 3 results already it will remove the oldest result
@@ -56,20 +60,22 @@ function isTrue (element) {
     if (typeof element != "undefined" && element != null) return 1;
     else return 0;
 }
+
 function showUserPick (userPick) {
     return document.querySelectorAll("div")[6].innerHTML = userPick.emoji
 }
+
 function showComPick (comPick) {
     return document.querySelectorAll("div")[8].innerHTML = comPick.emoji
 }
+
 function showPreviousResults (outcome, userPick, comPick) {
-    const sectionTwo = document.getElementsByClassName("section-two")[0];
     const ul = document.querySelectorAll("ul")[0];
     const li = document.createElement("li");
     const div = document.createElement("div");
     const thirdLI = document.querySelectorAll("li")[2];
     if (isTrue(thirdLI) === 0) {
-        sectionTwo.style.borderBottom = "1px solid black";
+        ul.style.borderTop = "1px solid black";
         li.style.borderBottom = "1px solid black";
         if (outcome === 1) {
             div. innerHTML = `&nbsp;${returnRound()}.WIN ${userPick} beats ${comPick}`;
