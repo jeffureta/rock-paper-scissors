@@ -44,10 +44,12 @@
     --box-height: 2rem;
 }
 
+/* body {overflow: hidden}; */
+
 .container__div {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
